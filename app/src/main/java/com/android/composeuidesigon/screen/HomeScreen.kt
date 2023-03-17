@@ -35,21 +35,6 @@ fun HomeScreen(navController: NavController) {
             fontSize = MaterialTheme.typography.h3.fontSize,
             fontWeight = FontWeight.Bold
         )
-        Text(
-            modifier = Modifier
-                .clickable {
-                           navController.navigate(route = Screen.Detail.passData(
-                               name = "Harshi",
-                               phone = 123456789,
-                               email = "harshi@gmail.com"
-                           ))
-                },
-            text = "Home",
-            color = MaterialTheme.colors.primary,
-            fontSize = MaterialTheme.typography.h3.fontSize,
-            fontWeight = FontWeight.Bold
-        )
-
     }
 }
 
