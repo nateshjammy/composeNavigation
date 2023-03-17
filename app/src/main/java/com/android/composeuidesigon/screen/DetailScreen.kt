@@ -1,47 +1,133 @@
 package com.android.composeuidesigon.screen
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
+import android.provider.ContactsContract.CommonDataKinds.Email
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
-import com.android.composeuidesigon.navigation.Screen
 
 @Composable
-fun DetailScreen(navController: NavController) {
+fun DetailScreen(
+    navController: NavController,
+    name: String?,
+    phone:Long,
+    email: String) {
 
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight(),
+        Arrangement.Top
     ) {
 
         Text(
             modifier = Modifier
-                .clickable {
-                    navController.navigate(Screen.Home.route) {
-                        popUpTo(Screen.Home.route) {
-                            inclusive = true
-                        }
-                    }
-                },
-            text = "Detail",
+                .wrapContentHeight()
+                .wrapContentWidth()
+                .align(CenterHorizontally), text = "Detail Screen",
             color = MaterialTheme.colors.primary,
             fontWeight = FontWeight.Bold,
-            fontSize = MaterialTheme.typography.h1.fontSize
+            fontSize = 28.sp
         )
 
-    }
-}
+        Row(
+            modifier = Modifier
+                .wrapContentHeight()
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(50.dp)
+        ) {
 
-@Composable
-@Preview
-fun DetailScreenPreview() {
-    DetailScreen(navController = rememberNavController())
+            Text(
+                modifier = Modifier
+                    .wrapContentHeight()
+                    .wrapContentWidth(),
+                text = "Name :",
+                color = MaterialTheme.colors.primary,
+                fontWeight = FontWeight.Bold,
+                fontSize = 28.sp,
+            )
+
+            Text(
+                modifier = Modifier
+                    .wrapContentHeight()
+                    .wrapContentWidth(), text = name ?: "",
+                color = MaterialTheme.colors.primary,
+                fontWeight = FontWeight.Bold,
+                fontSize = 28.sp
+            )
+
+
+        }
+
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Row(
+            modifier = Modifier
+                .wrapContentHeight()
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(50.dp)
+        ) {
+
+            Text(
+                modifier = Modifier
+                    .wrapContentHeight()
+                    .wrapContentWidth(),
+                text = "Phone:",
+                color = MaterialTheme.colors.primary,
+                fontWeight = FontWeight.Bold,
+                fontSize = 28.sp,
+            )
+
+            Text(
+                modifier = Modifier
+                    .wrapContentHeight()
+                    .wrapContentWidth(),
+                text = phone.toString(),
+                color = MaterialTheme.colors.primary,
+                fontWeight = FontWeight.Bold,
+                fontSize = 28.sp
+            )
+
+
+        }
+
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Row(
+            modifier = Modifier
+                .wrapContentHeight()
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(50.dp)
+        ) {
+
+            Text(
+                modifier = Modifier
+                    .wrapContentHeight()
+                    .wrapContentWidth(),
+                text = "Email:",
+                color = MaterialTheme.colors.primary,
+                fontWeight = FontWeight.Bold,
+                fontSize = 28.sp,
+            )
+
+            Text(
+                modifier = Modifier
+                    .wrapContentHeight()
+                    .wrapContentWidth(), text = email,
+                color = MaterialTheme.colors.primary,
+                fontWeight = FontWeight.Bold,
+                fontSize = 28.sp
+            )
+
+
+        }
+    }
 }
