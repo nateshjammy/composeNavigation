@@ -126,8 +126,6 @@ fun DetailScreen(
                 fontWeight = FontWeight.Bold,
                 fontSize = 28.sp
             )
-
-
         }
     }
 }
