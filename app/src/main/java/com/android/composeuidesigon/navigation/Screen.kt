@@ -6,6 +6,7 @@ const val DETAIL_ARGUMENT_KEY_PHONE = "phone"
 const val DETAIL_ARGUMENT_KEY_EMAIL = "email"
 const val DETAIL = "Detail_Screen"
 const val HOME = "Home_screen"
+const val INFO = "Info_screen"
 
 sealed class Screen(val route: String) {
 
@@ -23,6 +24,10 @@ sealed class Screen(val route: String) {
             return "$DETAIL/$name/$phone/$email"
         }
     }
+
+
+    object Info:Screen(route = INFO)
+
 
 
 }

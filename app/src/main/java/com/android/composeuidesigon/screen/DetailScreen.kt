@@ -1,6 +1,5 @@
 package com.android.composeuidesigon.screen
 
-import android.provider.ContactsContract.CommonDataKinds.Email
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -16,8 +15,9 @@ import androidx.navigation.NavController
 fun DetailScreen(
     navController: NavController,
     name: String?,
-    phone:Long,
-    email: String) {
+    phone: Long,
+    email: String
+) {
 
     Column(
         modifier = Modifier
@@ -127,5 +127,7 @@ fun DetailScreen(
                 fontSize = 28.sp
             )
         }
+
+        Spacer(modifier = Modifier.height(8.dp))
     }
 }
