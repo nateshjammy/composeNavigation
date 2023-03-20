@@ -49,7 +49,7 @@ fun HomeScreen(
                 },
             text = "Send Intent Data",
             color = MaterialTheme.colors.primary,
-            fontSize = MaterialTheme.typography.h3.fontSize,
+            fontSize = MaterialTheme.typography.h4.fontSize,
             fontWeight = FontWeight.Bold
         )
 
@@ -88,7 +88,18 @@ fun HomeScreen(
                 },
             text = "Click To Send Parcelize Data",
             color = MaterialTheme.colors.primary,
-            fontSize = MaterialTheme.typography.h3.fontSize,
+            fontSize = MaterialTheme.typography.h4.fontSize,
+            fontWeight = FontWeight.Bold
+        )
+
+        Text(
+            modifier = Modifier
+                .clickable {
+
+                },
+            text = "Lists using LazyColumn in Jetpack Compose",
+            color = MaterialTheme.colors.primary,
+            fontSize = MaterialTheme.typography.h4.fontSize,
             fontWeight = FontWeight.Bold
         )
 
