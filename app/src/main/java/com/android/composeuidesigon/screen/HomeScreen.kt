@@ -54,6 +54,45 @@ fun HomeScreen(
         )
 
 
+        Text(
+            modifier = Modifier
+                .clickable {
+
+                    val person = PersonInfo(
+                        name = "balaji",
+                        email = "balaji@gmail.com", phone = 123456
+                    )
+                    /*
+                   * Second  approach  with vieModel to send Parcelize data one screen to another
+                   *
+                   * */
+
+                    sharedViewModel.addPerson(person)
+
+
+                    /*
+                    *
+                    * First approach to send Parcelize data one screen to another
+                    * */
+
+                    //  navController.currentBackStackEntry?.savedStateHandle?.set("person",person)
+
+                    /*
+                    * Remove Home Screen From Backstack using popBackStack
+                    *
+                    * If you  are Remove BackStack sharedView Model used to get data
+                    * */
+
+                    navController.popBackStack()
+                    navController.navigate(Screen.Info.route)
+                },
+            text = "Click To Send Parcelize Data",
+            color = MaterialTheme.colors.primary,
+            fontSize = MaterialTheme.typography.h3.fontSize,
+            fontWeight = FontWeight.Bold
+        )
+
+/*
         Button(
             // below line is use to add onclick
             // parameter for our button onclick
@@ -65,26 +104,32 @@ fun HomeScreen(
                     name = "balaji",
                     email = "balaji@gmail.com", phone = 123456
                 )
-                /*
+                */
+/*
                * Second  approach  with vieModel to send Parcelize data one screen to another
                *
-               * */
+               * *//*
+
 
                 sharedViewModel.addPerson(person)
 
 
-                /*
+                */
+/*
                 *
                 * First approach to send Parcelize data one screen to another
-                * */
+                * *//*
+
 
                 //  navController.currentBackStackEntry?.savedStateHandle?.set("person",person)
 
-                /*
+                */
+/*
                 * Remove Home Screen From Backstack using popBackStack
                 *
                 * If you  are Remove BackStack sharedView Model used to get data
-                * */
+                * *//*
+
 
                 navController.popBackStack()
                 navController.navigate(Screen.Info.route)
@@ -112,6 +157,7 @@ fun HomeScreen(
         {
             Text(text = "Click To Send Parcelize Data ", color = Color.White)
         }
+*/
 
 
     }
