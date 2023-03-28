@@ -95,7 +95,8 @@ fun HomeScreen(
         Text(
             modifier = Modifier
                 .clickable {
-
+                    navController.popBackStack()
+                    navController.navigate(Screen.LazyColumn.route)
                 },
             text = "Lists using LazyColumn in Jetpack Compose",
             color = MaterialTheme.colors.primary,

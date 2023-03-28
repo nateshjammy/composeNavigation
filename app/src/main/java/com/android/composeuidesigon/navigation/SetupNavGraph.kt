@@ -14,9 +14,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.android.composeuidesigon.data.PersonInfo
-import com.android.composeuidesigon.screen.DetailScreen
-import com.android.composeuidesigon.screen.HomeScreen
-import com.android.composeuidesigon.screen.ViewPersonInfoScreen
+import com.android.composeuidesigon.screen.*
+import com.android.composeuidesigon.viewModel.LazyColumnScreenViewModel
 import com.android.composeuidesigon.viewModel.SharedViewModel
 
 @Composable
@@ -24,6 +23,7 @@ fun SetupNavGraph(navController: NavHostController) {
 
     val sharedViewModel:SharedViewModel = viewModel()
 
+    val lazyColumnScreenViewModel:LazyColumnScreenViewModel = viewModel()
     NavHost(
         navController = navController,
         startDestination = Screen.Home.route
@@ -69,5 +69,10 @@ fun SetupNavGraph(navController: NavHostController) {
             }
             ViewPersonInfoScreen(sharedViewModel)
         }
+
+        composable(route = Screen.LazyColumn.route){
+            LazyColumnScreen(lazyColumnScreenViewModel)
+        }
+
     }
 }

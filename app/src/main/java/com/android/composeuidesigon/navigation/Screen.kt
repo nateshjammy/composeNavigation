@@ -7,6 +7,7 @@ const val DETAIL_ARGUMENT_KEY_EMAIL = "email"
 const val DETAIL = "Detail_Screen"
 const val HOME = "Home_screen"
 const val INFO = "Info_screen"
+const val LAZYCOLUMN = "LazyColumn_Screen"
 
 sealed class Screen(val route: String) {
 
@@ -28,6 +29,8 @@ sealed class Screen(val route: String) {
 
     object Info:Screen(route = INFO)
 
+
+    object LazyColumn:Screen(route = LAZYCOLUMN)
 
 
 }

@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 class PersonInfo(
-    val name: String,
-    val phone: Long,
-    val email: String
+    val name: String? = null,
+    val phone: Long? = null,
+    val email: String? = null
 ) : Parcelable
